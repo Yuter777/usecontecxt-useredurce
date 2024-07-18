@@ -10,7 +10,7 @@ const initialState = {
   addModal: false,
   editModal: false,
   filteredTodos: [],
-  groups: [], // Add a groups state to hold the list of groups
+  groups: [], 
 };
 
 const reducer = (state, action) => {
@@ -28,7 +28,7 @@ const reducer = (state, action) => {
     case "SET_FILTERED_TODOS":
       return { ...state, filteredTodos: action.payload };
     case "SET_GROUPS":
-      return { ...state, groups: action.payload }; // Add a case for setting groups
+      return { ...state, groups: action.payload }; 
     case "TOGGLE_ADD_MODAL":
       return { ...state, addModal: !state.addModal };
     case "TOGGLE_EDIT_MODAL":
@@ -46,9 +46,9 @@ export const PostProvider = ({ children }) => {
     try {
       const res = await axios.get("http://localhost:3000/students");
       const todos = res.data;
-      const groups = [...new Set(todos.map((todo) => todo.group))]; // Extract unique groups
+      const groups = [...new Set(todos.map((todo) => todo.group))]; 
       dispatch({ type: "SET_TODOS", payload: todos });
-      dispatch({ type: "SET_GROUPS", payload: groups }); // Set the groups in state
+      dispatch({ type: "SET_GROUPS", payload: groups });
     } catch (err) {
       dispatch({ type: "SET_ERROR", payload: err.message });
     } finally {
@@ -62,7 +62,7 @@ export const PostProvider = ({ children }) => {
       const res = await axios.post("http://localhost:3000/students", todo);
       const newTodos = [...state.todos, res.data];
       dispatch({ type: "SET_TODOS", payload: newTodos });
-      const groups = [...new Set(newTodos.map((todo) => todo.group))]; // Update groups
+      const groups = [...new Set(newTodos.map((todo) => todo.group))];
       dispatch({ type: "SET_GROUPS", payload: groups });
     } catch (err) {
       dispatch({ type: "SET_ERROR", payload: err.message });
@@ -77,7 +77,7 @@ export const PostProvider = ({ children }) => {
       await axios.delete(`http://localhost:3000/students/${id}`);
       const newTodos = state.todos.filter((todo) => todo.id !== id);
       dispatch({ type: "SET_TODOS", payload: newTodos });
-      const groups = [...new Set(newTodos.map((todo) => todo.group))]; // Update groups
+      const groups = [...new Set(newTodos.map((todo) => todo.group))]; 
       dispatch({ type: "SET_GROUPS", payload: groups });
     } catch (err) {
       dispatch({ type: "SET_ERROR", payload: err.message });
@@ -97,7 +97,7 @@ export const PostProvider = ({ children }) => {
         item.id === todo.id ? res.data : item
       );
       dispatch({ type: "SET_TODOS", payload: newTodos });
-      const groups = [...new Set(newTodos.map((todo) => todo.group))]; // Update groups
+      const groups = [...new Set(newTodos.map((todo) => todo.group))];
       dispatch({ type: "SET_GROUPS", payload: groups });
     } catch (err) {
       dispatch({ type: "SET_ERROR", payload: err.message });
@@ -137,7 +137,7 @@ export const PostProvider = ({ children }) => {
         deleteTodo,
         updateTodo,
         searchTodos,
-        filterTodos, // Include filterTodos in context value
+        filterTodos, 
       }}
     >
       {children}
