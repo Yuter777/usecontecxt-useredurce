@@ -1,0 +1,52 @@
+{
+  "students": [
+    {
+      "id": "18",
+      "firstName": "Oydin",
+      "lastName": "Oripova",
+      "group": "I9"
+    },
+    {
+      "id": "20",
+      "firstName": "Aziza",
+      "lastName": "Mirzayeva",
+      "group": "J10"
+    },
+    {
+      "id": "3",
+      "firstName": "hxdfhd",
+      "lastName": "bdrth",
+      "group": "fmyj"
+    },
+    {
+      "id": "4",
+      "firstName": "kyt",
+      "lastName": "fwwd",
+      "group": "l24"
+    },
+    {
+      "id": "5",
+      "firstName": "xas",
+      "lastName": "asx",
+      "group": "xas"
+    },
+    {
+      "id": "6",
+      "firstName": "s",
+      "lastName": "a",
+      "group": "aa"
+    },
+    {
+      "id": "7",
+      "firstName": "",
+      "lastName": "n58",
+      "group": ""
+    },
+    {
+      "id": "8",
+      "firstName": "",
+      "lastName": "n58",
+      "group": ""
+    }
+  ]
+}

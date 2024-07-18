@@ -1,0 +1,8 @@
+a {
+  text-decoration: none !important;
+}
+
+.active span {
+  color: rgb(0, 0, 0);
+  border-bottom: solid 2px #888;
+}
