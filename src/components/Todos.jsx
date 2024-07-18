@@ -8,18 +8,18 @@ import { PostContext } from "../Contexts/MainContext";
 
 function Todos() {
   const { state, dispatch, searchTodos, filterTodos } = useContext(PostContext);
-  const [filter, setFilter] = useState("All"); // Add filter state
+  const [filter, setFilter] = useState("All"); 
 
-  // Handle filter changes
+  
   const handleFilterChange = (event) => {
     setFilter(event.target.value);
-    filterTodos(event.target.value); // Call the filter function from context
+    filterTodos(event.target.value); 
   };
 
-  // Handle search input
+  
   const handleSearchChange = (event) => {
     searchTodos(event);
-    filterTodos(filter); // Call the filter function after search
+    filterTodos(filter); 
   };
 
   return (
